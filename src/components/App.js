@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import MinutesInput from './MinutesInput';
+import LogMinutes from './MinutesInput';
+import ProgressBar from './ProgressBar';
+import SetGoal from './SetGoal';
 import './App.css';
 
 const App = () => {
@@ -8,17 +10,31 @@ const App = () => {
 
   const addInputToTotal = minutes => {
     minutes = parseInt(minutes);
-    console.log(totalMinutes + minutes);
     setTotalMinutes(totalMinutes + minutes);
   };
 
+  const changeGoal = minutes => {
+    minutes = parseInt(minutes);
+    setGoalMinutes(minutes);
+  }
   return (
     <div className="app">
-      <MinutesInput handleSubmit={addInputToTotal} />
-      {totalMinutes}/{goalMinutes}
-      {/* Logged bar */}
-      {/* Goal set */}
-      {/* Start over */}
+      <LogMinutes handleSubmit={addInputToTotal} />
+      <ProgressBar
+        minutes={totalMinutes}
+        goal={goalMinutes}
+      />
+      <SetGoal
+        currentGoal={goalMinutes}
+        changeGoal={changeGoal}
+      />
+      <div
+        onClick={() => {
+          setTotalMinutes(0);
+        }}
+      >Start over
+      <i className="fas fa-sync-alt"></i>
+      </div>
     </div>
   );
 };
