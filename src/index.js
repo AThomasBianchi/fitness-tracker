@@ -4,16 +4,10 @@ import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 
 import App from './components/App';
-
-function counter(state = 0, action) {
-  switch (action.type) {
-    default:
-      return state
-  }
-}
+import rootReducer from './reducers';
 
 const store = createStore(
-  counter,
+  rootReducer,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 
