@@ -32,7 +32,13 @@ body {
   background-color: #000;
   color: #fff;
   border: none;
-  border-radius: 10px;
+}
+
+.button--log-it {
+  border-radius: 30px;
+  font-size: 36px;
+  padding: 10px 20px;
+  margin-top: 15px;
 }
 
 .log-minutes,
@@ -68,13 +74,36 @@ body {
 }
 
 .progress-bar {
-  width: 75%;
-  height: 20px;
+  width: 70%;
+  height: 7px;
   background-color: white;
+  border-radius: 3.5px;
 }
 
 .percentage {
   background-color: black;
   height: 100%;
   transition: width 2s;
+  border-radius: 3.5px;
+}
+
+.progress-label {
+  font-family: var(--fatty);
+  font-size: 50px;
+  margin-top: 15px;
+}
+
+.goal-label {
+  font-family: var(--fatty);
+  font-size: 40px;
+}
+
+.goal-input {
+  background-color: inherit;
+  border: none;
+  border-bottom: solid #000 2px;
+  text-align: center;
+  width: 40%;
+  font-size: 30px;
+  font-style: var(--roboto);
 }

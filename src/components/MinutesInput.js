@@ -27,7 +27,7 @@ const LogMinutes = ({ addMinutes }) => {
         onChange={
           (e) => { setMinutes(e.target.value) }
         } />
-      <input className="button" type="submit" value="log it!" />
+      <input className="button button--log-it" type="submit" value="log it!" />
     </form>
   );
 };

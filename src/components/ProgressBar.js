@@ -12,7 +12,7 @@ const ProgressBar = ({ logged, goal }) => {
       <div className="progress-bar">
         <div className="percentage" style={lineStyle}></div>
       </div>
-      <div>{logged}/{goal}</div>
+      <div className="progress-label">{logged}/{goal}</div>
     </div>
   );
 };

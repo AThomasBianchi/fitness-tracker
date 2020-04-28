@@ -14,8 +14,9 @@ const SetGoal = ({ currentGoal, changeGoal }) => {
     <form
       className="set-goal"
       onSubmit={handleGoalChange}>
-      <label htmlFor="goal">goal</label>
+      <label className="goal-label" htmlFor="goal">goal:</label>
       <input
+        className="goal-input"
         name="goal"
         value={goal}
         onChange={(e) => {
