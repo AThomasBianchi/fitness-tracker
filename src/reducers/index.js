@@ -1,8 +1,6 @@
-function counter(state = 0, action) {
-  switch (action.type) {
-    default:
-      return state
-  }
-}
+import { combineReducers } from 'redux';
+import logReducer from './logReducer';
 
-export default counter;
+export default combineReducers({
+  loggedMinutes: logReducer,
+})

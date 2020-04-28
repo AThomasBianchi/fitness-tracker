@@ -8,18 +8,13 @@ const App = () => {
   const [totalMinutes, setTotalMinutes] = useState(0);
   const [goalMinutes, setGoalMinutes] = useState(150);
 
-  const addInputToTotal = minutes => {
-    minutes = parseInt(minutes);
-    setTotalMinutes(totalMinutes + minutes);
-  };
-
   const changeGoal = minutes => {
     minutes = parseInt(minutes);
     setGoalMinutes(minutes);
   }
   return (
     <div className="app">
-      <LogMinutes handleSubmit={addInputToTotal} />
+      <LogMinutes />
       <ProgressBar
         minutes={totalMinutes}
         goal={goalMinutes}

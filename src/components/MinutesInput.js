@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
+import { connect } from 'react-redux';
+import { addMinutes } from '../actions';
 
-const LogMinutes = ({ handleSubmit }) => {
+const LogMinutes = ({ addMinutes }) => {
   const [minutes, setMinutes] = useState('');
 
   const submitForm = () => {
     if (minutes) {
-      handleSubmit(minutes);
+      let minutesNum = parseInt(minutes);
+      addMinutes(minutesNum);
       setMinutes('');
     }
   };
@@ -32,4 +35,7 @@ const LogMinutes = ({ handleSubmit }) => {
   );
 };
 
-export default LogMinutes;
+export default connect(
+  null,
+  { addMinutes }
+)(LogMinutes);

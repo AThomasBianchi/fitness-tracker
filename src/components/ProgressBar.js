@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 const ProgressBar = ({ minutes, goal }) => {
   let pct = ((parseInt(minutes) / parseInt(goal)) * 100).toFixed(2);
@@ -16,4 +17,12 @@ const ProgressBar = ({ minutes, goal }) => {
   );
 };
 
-export default ProgressBar;
+const mapStateToProps = (state) => {
+  console.log(state);
+}
+
+
+export default connect(
+  mapStateToProps,
+  null,
+)(ProgressBar);
