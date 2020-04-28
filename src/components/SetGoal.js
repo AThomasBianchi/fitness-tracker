@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
+import { connect } from 'react-redux';
+import { changeGoal } from '../actions';
 
 const SetGoal = ({ currentGoal, changeGoal }) => {
   const [goal, setGoal] = useState(currentGoal);
 
   const handleGoalChange = (e) => {
     e.preventDefault();
-    changeGoal(goal);
+    changeGoal(parseInt(goal));
   }
 
   return (
@@ -29,4 +31,13 @@ const SetGoal = ({ currentGoal, changeGoal }) => {
   );
 };
 
-export default SetGoal;
+const mapStateToProps = ({ goal }) => {
+  return {
+    currentGoal: goal
+  }
+}
+
+export default connect(
+  mapStateToProps,
+  { changeGoal }
+)(SetGoal);

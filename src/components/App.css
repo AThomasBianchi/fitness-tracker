@@ -57,6 +57,7 @@ body {
   text-align: center;
   border-radius: 10px;
   border: none;
+  padding-top: 18px;
 }
 
 .progress-bar-container {

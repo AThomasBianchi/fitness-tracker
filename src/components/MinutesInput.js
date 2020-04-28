@@ -14,14 +14,11 @@ const LogMinutes = ({ addMinutes }) => {
   };
 
   return (
-    <form
-      className="log-minutes"
-      onSubmit={(e) => {
-        e.preventDefault();
-        submitForm();
-      }}>
-      <label
-        className="minutes-label" htmlFor="minutes">minutes</label>
+    <form className="log-minutes" onSubmit={(e) => {
+      e.preventDefault();
+      submitForm();
+    }}>
+      <label className="minutes-label" htmlFor="minutes">minutes</label>
       <input
         className="minutes-input"
         name="minutes"
